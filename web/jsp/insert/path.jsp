@@ -35,7 +35,7 @@
             {
                 var dropdown=document.getElementById("epos");
                 var temp=document.getElementById("addepos").value + dropdown.value;
-                temp = temp + "#"
+                temp = temp + "#";
                 document.getElementById("addepos").value =temp;
                 alert(temp);
             }
