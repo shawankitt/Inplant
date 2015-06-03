@@ -31,7 +31,7 @@
     <body>
         <h1>Transporter</h1>
         <pre>
-        <form name="transporter" action="">
+        <form name="transporter" action="" method="post">
             <input type="hidden" name="Id" value="<% out.print( plant.getIPlantId().toString() ); %>" ><br>
             Name:   <input type="text" name="TTransporterName"/><br>
             Mobile: <input type="text" name="TTransporterMobileNo"/><br>
@@ -41,7 +41,7 @@
             Pin:    <input type="text" name="ITransporterPin"/><br>
             Email:  <input type="text" name="TTransporterEmailId"/><br>
             Username: <input type="text" name="SUsername">
-            Password: <input type="text" name="SPassword">
+            Password: <input type="password" name="SPassword">
             <input type="button" name="add" id="add" value="Add More Transporter" onClick = "transporteraction(this)" />
             <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "transporteraction(this)" />
         </form>

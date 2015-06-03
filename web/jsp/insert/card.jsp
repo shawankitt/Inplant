@@ -38,7 +38,7 @@
             TblPlant plant = (TblPlant)s.findValue("current_session");
         %>
         <h1>Card</h1>
-        <form name="card" action="">
+        <form name="card" action="" method="post">
             <input  type="hidden" name="Id" value="<% out.print( plant.getIPlantId().toString() ); %>"/>
             Card Id : <input type="text" name="cardid" id="cardid"/><br>
             <input type="button" name="add" id="add" value="Add More Card" onClick = "cardaction(this)" />

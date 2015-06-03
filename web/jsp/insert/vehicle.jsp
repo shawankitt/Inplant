@@ -49,7 +49,7 @@
             TblPlant plant = (TblPlant)s.findValue("current_session");
             %>
         <pre>
-        <form name="vehicle" action="">
+        <form name="vehicle" action="" method="post">
             <input type="hidden" name="Id" value="<%out.print(plant.getIPlantId().toString());%>" ><br>
             Vehicle Id:  <input type="text" name="vid" /><br>
             Chasis No:   <input type="text" name="TChasisNo"/><br>

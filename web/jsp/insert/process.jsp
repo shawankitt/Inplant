@@ -34,7 +34,7 @@
                 document.Process.submit();
             }
         </script>
-        <form name="Process" action="">
+        <form name="Process" action="" method="post">
             <input  type="hidden" name="Id" value="17"/>
             Process Name : <input type="text" name="processname" />
             <input type="button" name="add" id="add" value="Add More Process" onClick = "processaction(this)" />

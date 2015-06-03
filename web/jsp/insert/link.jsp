@@ -63,7 +63,7 @@
                     out.println("<option value=\""+eposList.get(i).getIMachineId()+"\">"+ eposList.get(i).getTGatewayName()+"</option>");
             %>
         </select><br>
-        <form name="link" action="">
+        <form name="link" action="" method="post">
             <input type="hidden" name="Id" id="Id" value="<% out.print( plant.getIPlantId().toString() ); %>" >
             <input type="hidden" name="from" id="from" value=""/>
             <input type="hidden" name="to" id="to" value=""/>

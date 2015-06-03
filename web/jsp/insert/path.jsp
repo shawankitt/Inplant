@@ -50,7 +50,7 @@
                     out.println("<option value=\""+eposList.get(i).getIMachineId()+"\">"+ eposList.get(i).getTGatewayName()+"</option>");
             %>
         </select><br>
-        <form name="path" action="">
+        <form name="path" action="" method="post">
             Path Name<input type="text" name="TName"/><br>
             <input type="hidden" name="Id" id="Id" value="17" >
             <input type="hidden" name="addepos" id="addepos" value=""/>

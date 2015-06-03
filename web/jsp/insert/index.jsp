@@ -28,12 +28,12 @@
     
     <body>
         <h1>Plant Registration</h1>
-        <form name="registration" action="insertplant">
+        <form name="registration" action="insertplant" method="post">
             Plant Name:<input type="text" name="TPlantName" value="" /><br>
             Plant Owner:<input type="text" name="TPlantOwner" value="" /><br>
             Username  :<input type="text" name="username" value=""/><br>
-            Password  : <input type="text" id="pwd" name="password" value="" /> <br>
-            Conform Password  : <input type="text" id="pwd2" name="cpassword" value="" /> <br>
+            Password  : <input type="password" id="pwd" name="password" value="" /> <br>
+            Confirm Password  : <input type="password" id="pwd2" name="cpassword" value="" /> <br>
             <input type="button" value="Submit" onClick = "insertaction()" />
         </form>
     </body>

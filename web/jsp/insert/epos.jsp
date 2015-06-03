@@ -58,7 +58,7 @@
         %>
         <h1>Epos</h1>
         <pre>
-            <form name="epos" action="">
+            <form name="epos" action="" method="post">
                 <input  type="hidden" name="IPlantId" value="<% out.print( plant.getIPlantId().toString() ); %>"/>
 		Terminal Id:  <input type="text" name="ITerminalId"/><br>
 		Machine Id:  <input type="text" name="IMachineId"/><br>
