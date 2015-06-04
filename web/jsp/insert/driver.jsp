@@ -17,11 +17,9 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="../../js/jquery-min.js" type="text/javascript"></script>
         <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery-min.js" type="text/javascript"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../../js/placeholder.js" type="text/javascript"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Driver</title>
     </head>
     <body>
@@ -48,21 +46,11 @@
                     }
                     document.vehicle.submit();
                 }
-                else if(button.id === "next")
-                {
-                    document.vehicle.action="insertdrivernext";
-                    var dropdown=document.getElementById("Transporter");
-                    document.getElementById("TOwner").value=dropdown.value;
-                }
-                document.vehicle.submit();
-            }
-	</script>
-        <select id="Transporter" >
+            </script>
             <%
                 ValueStack s = ActionContext.getContext().getValueStack();
                 TblPlant plant = (TblPlant) s.findValue("current_session");
             %>
-        </select>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 jumbotron"> 
                     <form role="form" name="vehicle" action="" method="post">
