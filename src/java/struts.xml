@@ -83,6 +83,8 @@
         <action name="starttrip" class="struts.action.MappingInsertAction" method="execute">
             <result name="Success">/jsp/Mapping.jsp</result>
         </action>
-       
+       <action name="insertuser" class="struts.action.UserInsertAction" method="execute">
+            <result name="Success">/jsp/AddUser.jsp</result>
+        </action>
     </package>
 </struts>
