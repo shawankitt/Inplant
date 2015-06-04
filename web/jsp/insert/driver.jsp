@@ -14,20 +14,39 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../../js/jquery-min.js" type="text/javascript"></script>
+        <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/jquery-min.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../../js/placeholder.js" type="text/javascript"></script>
         <title>Driver</title>
     </head>
     <body>
-        <h1>Driver</h1>
-        <script>
-            function driveraction(button)
-            {
-                if(button.id === "add")
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <h2>Driver</h2>
+                </div>
+            </div>
+            <script>
+                function driveraction(button)
                 {
-                    document.vehicle.action="insertdriver";
-                    var dropdown=document.getElementById("Transporter");
-                    document.getElementById("TOwner").value=dropdown.value;
+                    if (button.id === "add")
+                    {
+                        document.vehicle.action = "insertdriver";
+                        var dropdown = document.getElementById("Transporter");
+                        document.getElementById("TOwner").value = dropdown.value;
+                    }
+                    else if (button.id === "next")
+                    {
+                        document.vehicle.action = "insertdrivernext";
+                        var dropdown = document.getElementById("Transporter");
+                        document.getElementById("TOwner").value = dropdown.value;
+                    }
+                    document.vehicle.submit();
                 }
                 else if(button.id === "next")
                 {
@@ -38,36 +57,59 @@
                 document.vehicle.submit();
             }
 	</script>
-        <%
-            ValueStack s = ActionContext.getContext().getValueStack();
-            TblPlant plant = (TblPlant)s.findValue("current_session");
-        %>
-        <form name="vehicle" action="" method="post">
-            <input type="hidden" name="Id" value="<% out.print( plant.getIPlantId().toString() ); %>" ><br>
-            Driver Name:   <input type="text" name="TDriverName" placeholder="Enter Driver Name" onfocus="hide(this)" onblur="show(this, 'Enter Driver Name')"/><br>
-            Driver Address 1: <input type="text" name="TDriverAddr1" placeholder="Enter Driver's 1st Address" onfocus="hide(this)" onblur="show(this, 'Enter Drivers 1st Address')" /><br>
-            Driver Address 2: <input type="text" name="TDriverAddr2" placeholder="Enter Driver's 2nd Address" onfocus="hide(this)" onblur="show(this, 'Enter Drivers 2nd Address')"/><br>
-            Driver City:   <input type="text" name="TDriverCity" placeholder="Enter City" onfocus="hide(this)" onblur="show(this, 'Enter City')" /><br>
-            State Id:   <input type="text" name="TStateId" placeholder="Enter State" onfocus="hide(this)" onblur="show(this, 'Enter State')" /><br>
-            Driver Pin:   <input type="text" name="IDriverPin" placeholder="Enter Driver Pin" onfocus="hide(this)" onblur="show(this, 'Enter Driver Pin')" /><br>
-            Country Id:   <input type="text" name="TCountryId" placeholder="Enter Country Id" onfocus="hide(this)" onblur="show(this, 'Enter Country Id')" /><br>
-            Driver Email Id:   <input type="text" name="TDriverEmailId" placeholder="Enter Email Id"  onfocus="hide(this)" onblur="show(this, 'Enter Email Id')"/><br>
-            Licence No:   <input type="text" name="TLicenceNo" placeholder="Enter Licence No" onfocus="hide(this)" onblur="show(this, 'Enter Licence No')" /><br>
-            License Expiry Date: <input type="date" name="dtLicenseExpiryDate" /><br>
-            <input type="hidden" name="TOwner" id="TOwner" value="" >
-        </form>
         <select id="Transporter" >
             <%
-                out.println("<option>Choose Transporter</option>");
-                TransporterList t=new TransporterList();
-                List<hibernate.pojo.TblTransporter> transporterList=t.getTransporterList(plant.getIPlantId().toString());
-                for(int i = 0; i < transporterList.size(); i++)
-                    out.println("<option value=\""+transporterList.get(i).getITransporterId()+"\">"+ transporterList.get(i).getTTransporterName() +"</option>");
+                ValueStack s = ActionContext.getContext().getValueStack();
+                TblPlant plant = (TblPlant) s.findValue("current_session");
             %>
         </select>
-        <form>
-            <input type="button" name="add" id="add" value="Add More Driver" onClick = "driveraction(this)" />
-            <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "driveraction(this)" />
-        </form>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4 jumbotron"> 
+                    <form role="form" name="vehicle" action="" method="post">
+                        <input type="hidden" name="Id" value="<% out.print(plant.getIPlantId().toString()); %>" >
+                        <div class="form-group">
+                            <label>Driver Name:</label>
+                            <input class="form-control" type="text" name="TDriverName" placeholder="Enter Driver Name" onfocus="hide(this)" onblur="show(this, 'Enter Driver Name')"/><br>
+                            <label>Driver Address 1: </label>
+                            <input class="form-control" type="text" name="TDriverAddr1" placeholder="Enter Driver's 1st Address" onfocus="hide(this)" onblur="show(this, 'Enter Drivers 1st Address')" /><br>
+                            <label>Driver Address 2: </label>
+                            <input class="form-control" type="text" name="TDriverAddr2" placeholder="Enter Driver's 2nd Address" onfocus="hide(this)" onblur="show(this, 'Enter Drivers 2nd Address')"/><br>
+                            <label>City: </label>
+                            <input class="form-control" type="text" name="TDriverCity" placeholder="Enter City" onfocus="hide(this)" onblur="show(this, 'Enter City')" /><br>
+                            <label>State Id:   </label>
+                            <input type="text" name="TStateId" class="form-control" placeholder="Enter State" onfocus="hide(this)" onblur="show(this, 'Enter State')" /><br>
+                            <label>Driver Pin: </label>  
+                            <input type="text" name="IDriverPin" class="form-control" placeholder="Enter Driver Pin" onfocus="hide(this)" onblur="show(this, 'Enter Driver Pin')" /><br>
+                            <label>Country Id:   </label>
+                            <input type="text" name="TCountryId" class="form-control" placeholder="Enter Country Id" onfocus="hide(this)" onblur="show(this, 'Enter Country Id')" /><br>
+                            <label>Driver Email Id:   </label>
+                            <input type="text" name="TDriverEmailId" class="form-control" placeholder="Enter Email Id"  onfocus="hide(this)" onblur="show(this, 'Enter Email Id')"/><br>
+                            <label>License No:   </label>
+                            <input type="text" name="TLicenceNo" class="form-control" placeholder="Enter Licence No" onfocus="hide(this)" onblur="show(this, 'Enter Licence No')" /><br>
+                            <label>License Expiry Date: </label>
+                            <input type="date" name="dtLicenseExpiryDate" class="form-control"/>
+                        </div>
+                        <input type="hidden" name="TOwner" id="TOwner" value="" >
+                    </form>
+                    <select id="Transporter" class="form-control">
+                        <%
+                            out.println("<option>Choose Transporter</option>");
+                            TransporterList t = new TransporterList();
+                            List<hibernate.pojo.TblTransporter> transporterList = t.getTransporterList(plant.getIPlantId().toString());
+                            for (int i = 0; i < transporterList.size(); i++) {
+                                out.println("<option value=\"" + transporterList.get(i).getITransporterId() + "\">" + transporterList.get(i).getTTransporterName() + "</option>");
+                            }
+                        %>
+                    </select>
+
+                    <form role="form">
+                        <div class="form-group">
+                        <input type="button" class="btn btn-info col-sm-12" name="add" id="add" value="Add More Driver" onClick = "driveraction(this)" />
+                        <input type="button"  class="btn btn-success col-sm-12" name="next" id="next" value="Submit And Next Page" onClick = "driveraction(this)" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
