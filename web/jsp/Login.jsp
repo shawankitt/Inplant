@@ -15,6 +15,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="js/bootstrap.min.js" type="text/javascript"></script>
         <script src="js/jquery-min.js" type="text/javascript"></script>
+        
     </head>
     <div class="container">
         <div class="jumbotron">
@@ -35,9 +36,12 @@
                         </div>
 
                             <input class="btn btn-success" type="submit" value="Login"/>
+                            <b>OR</b>
+                            <!--<a href="jsp/insert/index.jsp" style="color:black">Or register Here</a>-->
+                            <input class="btn btn-success" type="button" value="Rgister Here" onclick="window.location='jsp/insert/index.jsp'"/>
                     </form>
                     <br>
-                    <a href="jsp/insert/index.jsp">Or register Here</a>
+                    <!--<a href="jsp/insert/index.jsp">Or register Here</a>-->
                 </div>
             </div>    
         </div>

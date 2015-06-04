@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../js/placeholder.js" type="text/javascript"></script>
         <title>Card</title>
         
     </head>
@@ -40,7 +41,7 @@
         <h1>Card</h1>
         <form name="card" action="" method="post">
             <input  type="hidden" name="Id" value="<% out.print( plant.getIPlantId().toString() ); %>"/>
-            Card Id : <input type="text" name="cardid" id="cardid"/><br>
+            Card Id : <input type="text" name="cardid" id="cardid" placeholder="Enter Card Id" onfocus="hide(this)" onblur="show(this, 'Enter Card Id')"/><br>
             <input type="button" name="add" id="add" value="Add More Card" onClick = "cardaction(this)" />
             <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "cardaction(this)" />
         </form>

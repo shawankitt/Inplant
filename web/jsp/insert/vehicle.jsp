@@ -15,6 +15,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../js/placeholder.js" type="text/javascript"></script>
         <title>Vehicle</title>
     </head>
     <body>
@@ -48,15 +49,14 @@
             ValueStack s = ActionContext.getContext().getValueStack();
             TblPlant plant = (TblPlant)s.findValue("current_session");
             %>
-        <pre>
         <form name="vehicle" action="" method="post">
             <input type="hidden" name="Id" value="<%out.print(plant.getIPlantId().toString());%>" ><br>
-            Vehicle Id:  <input type="text" name="vid" /><br>
-            Chasis No:   <input type="text" name="TChasisNo"/><br>
-            Vehicle Type: <input type="text" name="TVehicleType"/><br>
-            Loading Capacity: <input type="text" name="ILoadCapacity"/><br>
-            National Permit:   <input type="text" name="TNationalPermit"/><br>
-            License Expiry Date: <input type="date" name="dtLicenseExpiryDate"/><br>
+            Vehicle Id:  <input type="text" name="vid" placeholder="Enter Vehicle Id" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Id')" /><br>
+            Chasis No:   <input type="text" name="TChasisNo" placeholder="Enter Chasis No" onfocus="hide(this)" onblur="show(this, 'Enter Chasis No')"/><br>
+            Vehicle Type: <input type="text" name="TVehicleType" placeholder="Enter Vehicle Type" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Type')"/><br>
+            Loading Capacity: <input type="text" name="ILoadCapacity" placeholder="Enter Load Capacity" onfocus="hide(this)" onblur="show(this, 'Enter Load Capacity')"/><br>
+            National Permit:   <input type="text" name="TNationalPermit" placeholder="Enter National Permit No" onfocus="hide(this)" onblur="show(this, 'Enter National Permit No')"/><br>
+            License Expiry Date: <input type="date" name="dtLicenseExpiryDate" /><br>
             <input type="hidden" name="TOwner" id="TOwner" value="" >
         </form>
         <select id="Transporter" >
@@ -72,6 +72,4 @@
             <input type="button" name="add" id="add" value="Add More Vehicle" onClick = "vehicleaction(this)" />
             <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "vehicleaction(this)" />
         </form>
-        </pre>
-    </body>
 </html>

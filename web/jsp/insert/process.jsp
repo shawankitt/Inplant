@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../js/placeholder.js" type="text/javascript"></script>
         <title>JSP Page</title>
     </head>
     <body>
@@ -36,7 +37,7 @@
         </script>
         <form name="Process" action="" method="post">
             <input  type="hidden" name="Id" value="17"/>
-            Process Name : <input type="text" name="processname" />
+            Process Name : <input type="text" name="processname" placeholder="Enter Process Name" onfocus="hide(this)" onblur="show(this, 'Enter Process Name')"/>
             <input type="button" name="add" id="add" value="Add More Process" onClick = "processaction(this)" />
             <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "processaction(this)" />
         </form>

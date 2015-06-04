@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../../js/placeholder.js" type="text/javascript"></script>
         <title>Link</title>
     </head>
     <body>
@@ -67,7 +68,7 @@
             <input type="hidden" name="Id" id="Id" value="<% out.print( plant.getIPlantId().toString() ); %>" >
             <input type="hidden" name="from" id="from" value=""/>
             <input type="hidden" name="to" id="to" value=""/>
-            Expected Time<input type="text" name="timeinbetween"/><br>
+            Expected Time<input type="text" name="timeinbetween" placeholder="Enter Time in Minutes" onfocus="hide(this)" onblur="show(this, 'Enter Time in MInutes')"/><br>
             <input type="button" name="add" id="add" value="Add More Links" onClick = "linkaction(this)" />
             <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "linkaction(this)" />
         </form>
