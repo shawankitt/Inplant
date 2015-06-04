@@ -18,9 +18,6 @@
         <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../../js/placeholder.js" type="text/javascript"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery-min.js" type="text/javascript"></script>
         <title>Link</title>
         <script>
             function linkaction(button)
@@ -84,11 +81,11 @@
                     </div>
                     <form role="form" name="link" action="" method="post">
                         <div class="form-group">
-                            <input type="hidden" name="Id" id="Id" value="<% out.print(plant.getIPlantId().toString());%>" >
+                            <input type="hidden" name="Id" id="Id" value="<% out.print(plant.getIPlantId().toString());%>">
                             <input type="hidden" name="from" id="from" value=""/>
                             <input type="hidden" name="to" id="to" value=""/>
                             <label>Expected Time Between Them</label>
-                            <input class="form-control" type="text" name="timeinbetween" placeholder="Enter Time in Minutes" onfocus="hide(this)" onblur="show(this, 'Enter Time in MInutes')"/><br>/><br>
+                            <input class="form-control" type="text" name="timeinbetween" placeholder="Enter Time in Minutes" onfocus="hide(this)" onblur="show(this, 'Enter Time in MInutes')"/><br>
                             <input type="button" class="btn btn-info col-sm-12" name="add" id="add" value="Add More Links" onClick = "linkaction(this)" />
                             <input type="button" class="btn btn-success col-sm-12" name="next" id="next" value="Submit And Next Page" onClick = "linkaction(this)" />
                         </div>

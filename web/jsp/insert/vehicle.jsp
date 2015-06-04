@@ -17,11 +17,8 @@
         <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="../../js/jquery-min.js" type="text/javascript"></script>
         <script src="../../js/bootstrap.min.js" type="text/javascript"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../../js/placeholder.js" type="text/javascript"></script>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/jquery-min.js" type="text/javascript"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Vehicle</title>
     </head>
     <body>
@@ -56,61 +53,26 @@
                     }
                     document.vehicle.submit();
                 }
-                if(button.id === "add")
-                {
-                    document.vehicle.action="insertvehicle";
-                    var dropdown=document.getElementById("Transporter");
-                    document.getElementById("TOwner").value=dropdown.value;
-                }
-                else if(button.id === "next")
-                {
-                    document.vehicle.action="insertvehiclenext";
-                    var dropdown=document.getElementById("Transporter");
-                    document.getElementById("TOwner").value=dropdown.value;
-                }
-                document.vehicle.submit();
-            }
-	</script>
-        <%
-            ValueStack s = ActionContext.getContext().getValueStack();
-            TblPlant plant = (TblPlant)s.findValue("current_session");
-            %>
-        <form name="vehicle" action="" method="post">
-            <input type="hidden" name="Id" value="<%out.print(plant.getIPlantId().toString());%>" ><br>
-            Vehicle Id:  <input type="text" name="vid" placeholder="Enter Vehicle Id" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Id')" /><br>
-            Chasis No:   <input type="text" name="TChasisNo" placeholder="Enter Chasis No" onfocus="hide(this)" onblur="show(this, 'Enter Chasis No')"/><br>
-            Vehicle Type: <input type="text" name="TVehicleType" placeholder="Enter Vehicle Type" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Type')"/><br>
-            Loading Capacity: <input type="text" name="ILoadCapacity" placeholder="Enter Load Capacity" onfocus="hide(this)" onblur="show(this, 'Enter Load Capacity')"/><br>
-            National Permit:   <input type="text" name="TNationalPermit" placeholder="Enter National Permit No" onfocus="hide(this)" onblur="show(this, 'Enter National Permit No')"/><br>
-            License Expiry Date: <input type="date" name="dtLicenseExpiryDate" /><br>
-            <input type="hidden" name="TOwner" id="TOwner" value="" >
-        </form>
-        <select id="Transporter" >
             </script>
             <%
                 ValueStack s = ActionContext.getContext().getValueStack();
                 TblPlant plant = (TblPlant) s.findValue("current_session");
             %>
-        </select>
-        <form>
-            <input type="button" name="add" id="add" value="Add More Vehicle" onClick = "vehicleaction(this)" />
-            <input type="button" name="next" id="next" value="Submit And Next Page" onClick = "vehicleaction(this)" />
-        </form>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 jumbotron"> 
                     <form name="vehicle" action="" method="post">
                         <div class="form-group">
                             <input type="hidden" name="Id" value="<%out.print(plant.getIPlantId().toString());%>" ><br>
                             <label>Vehicle Id:  </label>
-                            <input type="text" class="form-control" name="vid" />
+                            <input type="text" class="form-control" name="vid" placeholder="Enter Vehicle Id" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Id')"/>
                             <label>Chasis No:  </label>
-                            <input type="text" class="form-control" name="TChasisNo"/>
+                            <input type="text" class="form-control" name="TChasisNo" placeholder="Enter Chasis No" onfocus="hide(this)" onblur="show(this, 'Enter Chasis No')"/>
                             <label>Vehicle Type: </label>
-                            <input type="text" class="form-control" name="TVehicleType"/>
+                            <input type="text" class="form-control" name="TVehicleType" placeholder="Enter Vehicle Type" onfocus="hide(this)" onblur="show(this, 'Enter Vehicle Type')"/>
                             <label>Loading Capacity: </label>
-                            <input type="text" class="form-control" name="ILoadCapacity"/>
+                            <input type="text" class="form-control" name="ILoadCapacity" placeholder="Enter Loading Capacity" onfocus="hide(this)" onblur="show(this, 'Enter Loading Capacity')"/>
                             <label>National Permit:   </label>
-                            <input type="text" class="form-control" name="TNationalPermit"/>
+                            <input type="text" class="form-control" name="TNationalPermit" placeholder="Enter National Permit" onfocus="hide(this)" onblur="show(this, 'Enter National Permit')"/>
                             <label>License Expiry Date: </label>
                             <input type="date" class="form-control" name="dtLicenseExpiryDate"/>
                             <input type="hidden" name="TOwner" id="TOwner" value="" >
